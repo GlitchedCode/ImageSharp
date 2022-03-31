@@ -279,7 +279,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Quantization
             [MethodImpl(InliningOptions.ShortMethod)]
             public int GetPaletteIndex(TPixel color)
             {
-                Unsafe.SkipInit(out Rgba32 rgba);
+                //Unsafe.SkipInit(out Rgba32 rgba);
                 color.ToRgba32(ref rgba);
                 return this.root.GetPaletteIndex(ref rgba, 0);
             }
@@ -478,7 +478,7 @@ namespace SixLabors.ImageSharp.Processing.Processors.Quantization
                             Vector3.Zero,
                             new Vector3(255));
 
-                        Unsafe.SkipInit(out TPixel pixel);
+                        //Unsafe.SkipInit(out TPixel pixel);
                         pixel.FromRgba32(new Rgba32((byte)vector.X, (byte)vector.Y, (byte)vector.Z, byte.MaxValue));
                         palette[index] = pixel;
 
